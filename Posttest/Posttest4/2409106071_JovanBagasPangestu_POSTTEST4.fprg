@@ -1,0 +1,145 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="yiu"/>
+        <attribute name="authors" value="MSI Ryzen 5"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-10-01 10:41:30 PM"/>
+        <attribute name="created" value="TVNJIFJ5emVuIDU7U0lGUzsyMDI0LTEwLTAxOzA5OjI3OjM0IFBNOzI0NzQ="/>
+        <attribute name="edited" value="TVNJIFJ5emVuIDU7U0lGUzsyMDI0LTEwLTAxOzEwOjMwOjAwIFBNOzM7TVNJIFJ5emVuIDU7U0lGUzsyMDI0LTA5LTI1OzA5OjUyOjI2IEFNOzI0MDkxMDYwNzFfSm92YW5CYWdhc1Bhbmdlc3R1X1BPU1RURVNUMy5mcHJnOzg4NTQ="/>
+        <attribute name="edited" value="TVNJIFJ5emVuIDU7U0lGUzsyMDI0LTEwLTAxOzEwOjQxOjMwIFBNOzI7MjU2Nw=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="usn, pw, login, username, password" type="String" array="False" size=""/>
+            <declare name="salah" type="Integer" array="False" size=""/>
+            <output expression="&quot;usn= jovan bagas pangestu&quot;" newline="True"/>
+            <output expression="&quot;pw= 71&quot;" newline="True"/>
+            <output expression="&quot;Apakah Anda ingin login?&quot;" newline="True"/>
+            <input variable="login"/>
+            <if expression="login == &quot;tidak&quot;">
+                <then>
+                    <output expression="&quot;Anda tidak memilih untuk Login&quot;" newline="True"/>
+                </then>
+                <else>
+                    <output expression="&quot;username: &quot;" newline="True"/>
+                    <input variable="usn"/>
+                    <output expression="&quot;password: &quot;" newline="True"/>
+                    <input variable="pw"/>
+                    <if expression="usn = &quot;jovan bagas pangestu&quot; and pw = &quot;71&quot;">
+                        <then>
+                            <declare name="TINGGIBADANkm, BERATBADANmg, TINGGIBADANm, BERATBADANkg, BMI" type="Real" array="False" size=""/>
+                            <output expression="&quot;Welcome to Body Mass Index (BMI)&quot;" newline="True"/>
+                            <output expression="&quot;Masukkan tinggi Anda dalam satuan km&quot;" newline="True"/>
+                            <output expression="&quot;contoh: tinggi Anda 1.55 m, masukkanlah angka 0.00155 km&quot;" newline="True"/>
+                            <input variable="TINGGIBADANkm"/>
+                            <assign variable="TINGGIBADANm" expression="TINGGIBADANkm * 1000"/>
+                            <output expression="&quot;Tinggi badan Anda &quot; &amp; TINGGIBADANm &amp; &quot; m&quot;" newline="True"/>
+                            <output expression="&quot;Masukkan berat badan Anda dalam satuan mg&quot;" newline="True"/>
+                            <output expression="&quot;contoh: berat badan Anda 55 kg, masukkanlah angka 55000000 mg (berat badan x 1.000.000)&quot;" newline="True"/>
+                            <input variable="BERATBADANmg"/>
+                            <assign variable="BERATBADANkg" expression="BERATBADANmg / 1000000"/>
+                            <output expression="&quot;Berat badan Anda adalah &quot; &amp; BERATBADANkg &amp; &quot; kg&quot;" newline="True"/>
+                            <assign variable="BMI" expression="BERATBADANkg/(TINGGIBADANm^2)"/>
+                            <if expression="BMI &lt; 18.5">
+                                <then>
+                                    <output expression="&quot;Skor BMI Anda adalah &quot; &amp; BMI" newline="True"/>
+                                    <output expression="&quot;Berat badan Anda kurang (underweight)&quot;" newline="True"/>
+                                </then>
+                                <else>
+                                    <if expression="BMI &lt; 24.9">
+                                        <then>
+                                            <output expression="&quot;Skor BMI Anda adalah &quot; &amp; BMI" newline="True"/>
+                                            <output expression="&quot;Berat badan Anda normal &quot;" newline="True"/>
+                                        </then>
+                                        <else>
+                                            <if expression="BMI &lt; 29.9">
+                                                <then>
+                                                    <output expression="&quot;Skor BMI Anda adalah &quot; &amp; BMI" newline="True"/>
+                                                    <output expression="&quot;Berat badan Anda berlebih (overweight)&quot;" newline="True"/>
+                                                </then>
+                                                <else>
+                                                    <if expression="BMI &gt; 30">
+                                                        <then>
+                                                            <output expression="&quot;Skor BMI Anda adalah &quot; &amp; BMI" newline="True"/>
+                                                            <output expression="&quot;Anda tergolong Obesitas&quot;" newline="True"/>
+                                                        </then>
+                                                        <else>
+                                                            <output expression="&quot;Skor BMI Anda adalah &quot; &amp; BMI" newline="True"/>
+                                                            <output expression="&quot;Anda tergolong Obesitas&quot;" newline="True"/>
+                                                        </else>
+                                                    </if>
+                                                </else>
+                                            </if>
+                                        </else>
+                                    </if>
+                                </else>
+                            </if>
+                        </then>
+                        <else>
+                            <assign variable="salah" expression="0"/>
+                            <do expression="usn != &quot;jovan bagas pangestu&quot; and pw != &quot;71&quot;">
+                                <assign variable="salah" expression="salah + 1"/>
+                                <output expression="&quot;gagal login sebanyak &quot; &amp; salah &amp; &quot; kali&quot;" newline="True"/>
+                                <output expression="&quot;Anda hanya diberi 3 kali kesempatan untuk Login&quot;" newline="True"/>
+                                <output expression="&quot;username: &quot;" newline="True"/>
+                                <input variable="usn"/>
+                                <output expression="&quot;password: &quot;" newline="True"/>
+                                <input variable="pw"/>
+                                <breakpoint expression="salah == 3" always="False"/>
+                            </do>
+                            <declare name="TINGGIBADANkm, BERATBADANmg, TINGGIBADANm, BERATBADANkg, BMI" type="Real" array="False" size=""/>
+                            <output expression="&quot;Welcome to Body Mass Index (BMI)&quot;" newline="True"/>
+                            <output expression="&quot;Masukkan tinggi Anda dalam satuan km&quot;" newline="True"/>
+                            <output expression="&quot;contoh: tinggi Anda 1.55 m, masukkanlah angka 0.00155 km&quot;" newline="True"/>
+                            <input variable="TINGGIBADANkm"/>
+                            <assign variable="TINGGIBADANm" expression="TINGGIBADANkm * 1000"/>
+                            <output expression="&quot;Tinggi badan Anda &quot; &amp; TINGGIBADANm &amp; &quot; m&quot;" newline="True"/>
+                            <output expression="&quot;Masukkan berat badan Anda dalam satuan mg&quot;" newline="True"/>
+                            <output expression="&quot;contoh: berat badan Anda 55 kg, masukkanlah angka 55000000 mg (berat badan x 1.000.000)&quot;" newline="True"/>
+                            <input variable="BERATBADANmg"/>
+                            <assign variable="BERATBADANkg" expression="BERATBADANmg / 1000000"/>
+                            <output expression="&quot;Berat badan Anda adalah &quot; &amp; BERATBADANkg &amp; &quot; kg&quot;" newline="True"/>
+                            <assign variable="BMI" expression="BERATBADANkg/(TINGGIBADANm^2)"/>
+                            <if expression="BMI &lt; 18.5">
+                                <then>
+                                    <output expression="&quot;Skor BMI Anda adalah &quot; &amp; BMI" newline="True"/>
+                                    <output expression="&quot;Berat badan Anda kurang (underweight)&quot;" newline="True"/>
+                                </then>
+                                <else>
+                                    <if expression="BMI &lt; 24.9">
+                                        <then>
+                                            <output expression="&quot;Skor BMI Anda adalah &quot; &amp; BMI" newline="True"/>
+                                            <output expression="&quot;Berat badan Anda normal &quot;" newline="True"/>
+                                        </then>
+                                        <else>
+                                            <if expression="BMI &lt; 29.9">
+                                                <then>
+                                                    <output expression="&quot;Skor BMI Anda adalah &quot; &amp; BMI" newline="True"/>
+                                                    <output expression="&quot;Berat badan Anda berlebih (overweight)&quot;" newline="True"/>
+                                                </then>
+                                                <else>
+                                                    <if expression="BMI &gt; 30">
+                                                        <then>
+                                                            <output expression="&quot;Skor BMI Anda adalah &quot; &amp; BMI" newline="True"/>
+                                                            <output expression="&quot;Anda tergolong Obesitas&quot;" newline="True"/>
+                                                        </then>
+                                                        <else>
+                                                            <output expression="&quot;Skor BMI Anda adalah &quot; &amp; BMI" newline="True"/>
+                                                            <output expression="&quot;Anda tergolong Obesitas&quot;" newline="True"/>
+                                                        </else>
+                                                    </if>
+                                                </else>
+                                            </if>
+                                        </else>
+                                    </if>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>
